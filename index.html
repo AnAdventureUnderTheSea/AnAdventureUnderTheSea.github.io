@@ -112,6 +112,22 @@
       scroll-margin-block-end: 110px;
       /*Adds margin to the bottom of the viewport*/
     } 
+    #page4 {
+      height: calc(4 * 768px);
+      text-align: center;
+      scroll-margin-block-start: 110px;
+      /*Adds margin to the top of the viewport*/
+      scroll-margin-block-end: 110px;
+      /*Adds margin to the bottom of the viewport*/
+    } 
+    #page5 {
+      height: calc(5 * 768px);
+      text-align: center;
+      scroll-margin-block-start: 110px;
+      /*Adds margin to the top of the viewport*/
+      scroll-margin-block-end: 110px;
+      /*Adds margin to the bottom of the viewport*/
+    } 
     
   </style>
 </head>
@@ -147,8 +163,45 @@
     <a class="content">
       在離開之前，巫女給他們一個錦囊，並囑咐他們緊要關頭才能打開。
     </a>
+    <a href="#page4" class="next round">&#8250;</a>
+  </div>
+  
+  <!-- page 4 -->
+  <div id="page4">
+    <a class="content">來試試手氣吧！<br></a>
+    <!-- lottery -->
+    <button onclick="lottery(1, 0, 2);">免費單抽一回</button>
+    <div id="rand"></div>
+    <a href="#page5" class="next round">&#8250;</a>
+  </div>
+  <script>
+    function lottery() {
+      var x = parseInt(Math.random() * 10 % 3);
+      var y;
+      switch(x) {
+        case 0:
+          y = "上帝果實時光到流";
+          break;
+        case 1:
+          y = "天使果實治癒百病(限一人)";
+          break;
+        case 2:
+          y = "惡魔果實死者復活";
+          break;
+        default:
+          y = "Lottery Failure";
+          break;
+      }
+      document.getElementById("rand").innerHTML = y;
+    }
+  </script>
+
+  <!-- page 5 -->
+  <div id="page5">
+    <a class="content">來！<br></a>
     <a href="https://anadventureunderthesea.github.io" class="next round">&#8250;</a>
   </div>
+
 
   <!-- 
   <a href="#element">Link</a>
