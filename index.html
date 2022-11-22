@@ -9,13 +9,28 @@
       background-attachment: fixed;
       background-size: cover;
     }
+
     .header {
       padding: 180px;
       text-align: center;
       color: white;
       font-size: 30px;
       border: none;
+
+      animation: fadeInAnimation ease 3s;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
     }
+    @keyframes fadeInAnimation {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    /* entry button */
     .btn {
       background-color: white;
       border: 2px solid #008CBA; /* Blue */
@@ -33,16 +48,57 @@
       color: white;
       box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
     }
+    
+    .content {
+      background-color: white;
+      border: 2px solid #008CBA; /* Blue */
+      border-radius: 12px;
+      color: black;
+      padding: 10px 24px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 20px;
+      transition-duration: 0.2s;
+    }
+
+    /* next */
+    a {
+      text-decoration: none;
+      display: inline-block;
+      padding: 8px 16px;
+    }
+    a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+    .next {
+      background-color: #04AA6D;
+      color: white;
+    }
+    .round {
+      border-radius: 50%;
+    }
+
+    /* scroll page */
     html {
       scroll-behavior: smooth;
     }
-    a {
-      text-decoration: none;
-      color: white;
+    #page1 {
+      height: 768px;
+      text-align: center;
+      scroll-margin-block-start: 110px;
+      /*Adds margin to the top of the viewport*/
+      scroll-margin-block-end: 110px;
+      /*Adds margin to the bottom of the viewport*/
     } 
-    #down {
-      margin-top: 100%;
-      padding-bottom: 25%;
+    #page2 {
+      height: 1536px;
+      text-align: center;
+      scroll-margin-block-start: 110px;
+      /*Adds margin to the top of the viewport*/
+      scroll-margin-block-end: 110px;
+      /*Adds margin to the bottom of the viewport*/
     } 
     
   </style>
@@ -50,15 +106,38 @@
   
 <body>
   
+  <!-- front page -->
   <div class="header">
     <!-- header -->
     <h1>海底冒險記</h1>
     <!-- next page -->
-    <a class="btn" href="#down">點選以開始故事</a>
-    <div id="down">
-      <h2>You are down!</h2>
-    </div>
+    <a class="btn" href="#page1">點選以開始故事</a>
   </div>
+  
+  <!-- page 1 -->
+  <div id="page1">
+    <a class="content">在海底世界有個鯊魚國，<br>老鯊魚國王有三個兒子，他生了重病，瀕臨命危。</a>
+    <a href="#page2" class="next round">&#8250;</a>
+  </div>
+
+  <!-- page 2 -->
+  <div id="page2">
+    <a class="content">
+    但是海底唯一懂得人類醫術的巫醫已仙逝多年。<br>
+    王子從巫女那邊得知海底世界傳說有一處禁地叫狂鯊之巔。<br>
+    裡面有個神藥可以讓一切疾病皆痊癒，於是三位小鯊魚王子決定去禁地尋找神藥來拯救父王。
+    </a>
+    <a href="#page1" class="next round">&#8250;</a>
+  </div>
+
+  <!-- 
+  <a href="#element">Link</a>
+  <div id="otherElement">Content</a>
+  <div id="element">
+    Where you want to scroll
+  </div>
+  <div id="otherElement">Content</a>
+  -->
 
   <!-- scroll down
   <html>
