@@ -34,7 +34,7 @@
         }
     }
 
-    /* entry button */
+    /* front entry button */
     .btn {
       background-color: white;
       border: 2px solid #008CBA; /* Blue */
@@ -66,7 +66,7 @@
       transition-duration: 0.2s;
     }
 
-    /* next */
+    /* button next */
     a {
       text-decoration: none;
       display: inline-block;
@@ -88,45 +88,34 @@
     html {
       scroll-behavior: smooth;
     }
+    #page0 {
+      height: 768px;
+      text-align: center;
+
+      /*
+      scroll-margin-block-start: 110px;
+      scroll-margin-block-end: 110px;
+      */
+    } 
     #page1 {
       height: 768px;
       text-align: center;
-      scroll-margin-block-start: 110px;
-      /*Adds margin to the top of the viewport*/
-      scroll-margin-block-end: 110px;
-      /*Adds margin to the bottom of the viewport*/
     } 
     #page2 {
-      height: calc(2 * 768px);
+      height: 768px;
       text-align: center;
-      scroll-margin-block-start: 110px;
-      /*Adds margin to the top of the viewport*/
-      scroll-margin-block-end: 110px;
-      /*Adds margin to the bottom of the viewport*/
     } 
     #page3 {
-      height: calc(3 * 768px);
+      height: 768px;
       text-align: center;
-      scroll-margin-block-start: 110px;
-      /*Adds margin to the top of the viewport*/
-      scroll-margin-block-end: 110px;
-      /*Adds margin to the bottom of the viewport*/
     } 
     #page4 {
-      height: calc(4 * 768px);
+      height: 768px;
       text-align: center;
-      scroll-margin-block-start: 110px;
-      /*Adds margin to the top of the viewport*/
-      scroll-margin-block-end: 110px;
-      /*Adds margin to the bottom of the viewport*/
     } 
     #page5 {
-      height: calc(5 * 768px);
+      height: 768px;
       text-align: center;
-      scroll-margin-block-start: 110px;
-      /*Adds margin to the top of the viewport*/
-      scroll-margin-block-end: 110px;
-      /*Adds margin to the bottom of the viewport*/
     } 
     
   </style>
@@ -135,7 +124,7 @@
 <body>
   
   <!-- front page -->
-  <div class="header">
+  <div id="page0" class="header">
     <!-- header -->
     <h1>海底冒險記</h1>
     <!-- next page -->
@@ -145,6 +134,7 @@
   <!-- page 1 -->
   <div id="page1">
     <a class="content">在海底世界有個鯊魚國，<br>老鯊魚國王有三個兒子，他生了重病，瀕臨命危。</a>
+    <!-- next page -->
     <a href="#page2" class="next round">&#8250;</a>
   </div>
 
@@ -155,6 +145,7 @@
     王子從巫女那邊得知海底世界傳說有一處禁地叫狂鯊之巔。<br>
     裡面有個神藥可以讓一切疾病皆痊癒，於是三位小鯊魚王子決定去禁地尋找神藥來拯救父王。
     </a>
+    <!-- next page -->
     <a href="#page3" class="next round">&#8250;</a>
   </div>
 
@@ -163,6 +154,7 @@
     <a class="content">
       在離開之前，巫女給他們一個錦囊，並囑咐他們緊要關頭才能打開。
     </a>
+    <!-- next page -->
     <a href="#page4" class="next round">&#8250;</a>
   </div>
   
@@ -172,6 +164,7 @@
     <!-- lottery -->
     <button onclick="lottery(1, 0, 2);">免費單抽一回</button>
     <div id="rand"></div>
+    <!-- next page -->
     <a href="#page5" class="next round">&#8250;</a>
   </div>
   <script>
