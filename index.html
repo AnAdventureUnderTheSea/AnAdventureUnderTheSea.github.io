@@ -56,6 +56,7 @@
 
     /* lottery button */
     .lty {
+      margin-top: 450px;
       font-family: ‘Noto Sans TC’, sans-serif;
       font-weight:800;
       background-color: white;
@@ -94,7 +95,22 @@
       box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
     }
     
-    .content {
+    /* contents */
+    .topcont {
+      margin-top: 110px;
+      background-color: white;
+      border: 2px solid #008CBA; /* Blue */
+      border-radius: 12px;
+      color: black;
+      padding: 10px 24px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 20px;
+      transition-duration: 0.2s;
+    }
+    .botcont {
+      margin-block: 590px;
       background-color: white;
       border: 2px solid #008CBA; /* Blue */
       border-radius: 12px;
@@ -189,14 +205,14 @@
   
   <!-- page 1 -->
   <div id="page1">
-    <a class="hideme content">在海底世界有個鯊魚國，<br>老鯊魚國王有三個兒子，他生了重病，瀕臨命危。</a>
+    <a class="hideme botcont">在海底世界有個鯊魚國，<br>老鯊魚國王有三個兒子，他生了重病，瀕臨命危。</a>
     <!-- next page -->
     <a href="#page2" class="hideme next round">&#8250;</a>
   </div>
 
   <!-- page 2 -->
   <div id="page2">
-    <a class="hideme content">
+    <a class="hideme topcont">
     但是海底唯一懂得人類醫術的巫醫已仙逝多年。<br>
     王子從巫女那邊得知海底世界傳說有一處禁地叫狂鯊之巔。<br>
     裡面有個神藥可以讓一切疾病皆痊癒，於是三位小鯊魚王子決定去禁地尋找神藥來拯救父王。
@@ -207,7 +223,7 @@
 
   <!-- page 3 -->
   <div id="page3">
-    <a class="hideme content">
+    <a class="hideme botcont">
       在離開之前，巫女給他們一個錦囊，並囑咐他們緊要關頭才能打開。
     </a>
     <!-- next page -->
@@ -216,10 +232,10 @@
   
   <!-- page 4 -->
   <div id="page4">
-    <a class="hideme content">來試試手氣吧！</a>
+    <a class="hideme topcont">來試試手氣吧！</a>
+    <div id="rand"></div>
     <!-- lottery -->
     <button class="hideme lty" onclick="lottery(1, 0, 2);">免費單抽一回</button>
-    <div id="rand"></div>
     <!-- next page -->
     <a href="#page5" class="hideme next round">&#8250;</a>
   </div>
@@ -247,7 +263,7 @@
 
   <!-- page 5 -->
   <div id="page5">
-    <a class="content">來！<br></a>
+    <a class="topcont">來！<br></a>
     <a href="https://anadventureunderthesea.github.io" class="next round">&#8250;</a>
   </div>
 
