@@ -2,6 +2,25 @@
 <html>
   
 <head>
+  <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+  <script>
+    $(document).ready(function() {
+    /* Every time the window is scrolled ... */
+    $(window).scroll(function() {
+      /* Check the location of each desired element */
+      $('.hideme').each(function(i) {
+        var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+        var bottom_of_window = $(window).scrollTop() + $(window).height();
+        /* If the object is completely visible in the window, fade it it */
+        if (bottom_of_window > bottom_of_object) {
+          $(this).animate({
+            'opacity': '1'
+          },  1000);
+        }
+      });
+    });
+    });
+  </script>
   <style>
     @import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
     body {
@@ -33,6 +52,27 @@
         100% {
             opacity: 1;
         }
+    }
+
+    /* lottery button */
+    .lty {
+      font-family: ‘Noto Sans TC’, sans-serif;
+      font-weight:800;
+      background-color: white;
+      border: 2px solid #008CBA; /* Blue */
+      border-radius: 12px;
+      color: black;
+      padding: 10px 24px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 20px;
+      transition-duration: 0.4s;
+    }
+    .lty:hover {
+      background-color: #008CBA; /* Blue */
+      color: white;
+      box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
     }
 
     /* front entry button */
@@ -67,19 +107,20 @@
       transition-duration: 0.2s;
     }
 
-    /* fade in animation */
-    .ani {   
-      animation: fadeInAnimation ease 3s;
-      animation-iteration-count: 2;
-      animation-fill-mode: forwards;
+    /* content fade in animation */
+    #container
+    {
+      height:2000px;    
     }
-    @keyframes fadeInAnimation {
-        0% {
-            opacity: 0;
-        }
-        100% {
-            opacity: 1;
-        }
+    #container DIV
+    { 
+      margin:50px; 
+      padding:50px; 
+      background-color:lightgreen; 
+    }
+    .hideme
+    {
+      opacity:0;
     }
 
     /* button next */
@@ -111,7 +152,6 @@
     #page1 {
       height: 768px;
       text-align: center;
-      animation: fadeInAnimation ease 3s;
       /*
       scroll-margin-block-start: 110px;
       scroll-margin-block-end: 110px;
@@ -149,48 +189,39 @@
   
   <!-- page 1 -->
   <div id="page1">
-    <a class="content">在海底世界有個鯊魚國，<br>老鯊魚國王有三個兒子，他生了重病，瀕臨命危。</a>
+    <a class="hideme content">在海底世界有個鯊魚國，<br>老鯊魚國王有三個兒子，他生了重病，瀕臨命危。</a>
     <!-- next page -->
-    <a href="#page2" class="next round">&#8250;</a>
+    <a href="#page2" class="hideme next round">&#8250;</a>
   </div>
-  <script>
-    window.onscroll = function() {myFunction()};
-
-    function myFunction() {
-      if (document.body.scrollTop > 350 || document.documentElement.scrollTop > 350) {
-        document.getElementById("page1").className = "ani";
-      }
-    }
-  </script>
 
   <!-- page 2 -->
   <div id="page2">
-    <a class="content">
+    <a class="hideme content">
     但是海底唯一懂得人類醫術的巫醫已仙逝多年。<br>
     王子從巫女那邊得知海底世界傳說有一處禁地叫狂鯊之巔。<br>
     裡面有個神藥可以讓一切疾病皆痊癒，於是三位小鯊魚王子決定去禁地尋找神藥來拯救父王。
     </a>
     <!-- next page -->
-    <a href="#page3" class="next round">&#8250;</a>
+    <a href="#page3" class="hideme next round">&#8250;</a>
   </div>
 
   <!-- page 3 -->
   <div id="page3">
-    <a class="content">
+    <a class="hideme content">
       在離開之前，巫女給他們一個錦囊，並囑咐他們緊要關頭才能打開。
     </a>
     <!-- next page -->
-    <a href="#page4" class="next round">&#8250;</a>
+    <a href="#page4" class="hideme next round">&#8250;</a>
   </div>
   
   <!-- page 4 -->
   <div id="page4">
-    <a class="content">來試試手氣吧！<br></a>
+    <a class="hideme content">來試試手氣吧！</a>
     <!-- lottery -->
-    <button onclick="lottery(1, 0, 2);">免費單抽一回</button>
+    <button class="hideme lty" onclick="lottery(1, 0, 2);">免費單抽一回</button>
     <div id="rand"></div>
     <!-- next page -->
-    <a href="#page5" class="next round">&#8250;</a>
+    <a href="#page5" class="hideme next round">&#8250;</a>
   </div>
   <script>
     function lottery() {
@@ -198,13 +229,13 @@
       var y;
       switch(x) {
         case 0:
-          y = "上帝果實時光到流";
+          y = "上帝果實<br>時光到流";
           break;
         case 1:
-          y = "天使果實治癒百病(限一人)";
+          y = "天使果實<br>治癒百病(限一人)";
           break;
         case 2:
-          y = "惡魔果實死者復活";
+          y = "惡魔果實<br>死者復活";
           break;
         default:
           y = "Lottery Failure";
