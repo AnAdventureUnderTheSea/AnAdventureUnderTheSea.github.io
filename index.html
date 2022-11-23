@@ -67,6 +67,21 @@
       transition-duration: 0.2s;
     }
 
+    /* fade in animation */
+    .ani {   
+      animation: fadeInAnimation ease 3s;
+      animation-iteration-count: 2;
+      animation-fill-mode: forwards;
+    }
+    @keyframes fadeInAnimation {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
     /* button next */
     a {
       text-decoration: none;
@@ -138,12 +153,12 @@
     <!-- next page -->
     <a href="#page2" class="next round">&#8250;</a>
   </div>
-  <!-- scrolled -->
   <script>
-    window.onscroll = function() {s1()};
-    function s1() {
-      if (document.body.scrollTop > 768 || document.documentElement.scrollTop > 768) {
-        document.getElementById("page1").className = "content";
+    window.onscroll = function() {myFunction()};
+
+    function myFunction() {
+      if (document.body.scrollTop > 350 || document.documentElement.scrollTop > 350) {
+        document.getElementById("page1").className = "ani";
       }
     }
   </script>
