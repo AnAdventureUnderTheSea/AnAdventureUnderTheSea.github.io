@@ -96,6 +96,7 @@
     #page1 {
       height: 768px;
       text-align: center;
+      animation: fadeInAnimation ease 3s;
       /*
       scroll-margin-block-start: 110px;
       scroll-margin-block-end: 110px;
@@ -137,6 +138,15 @@
     <!-- next page -->
     <a href="#page2" class="next round">&#8250;</a>
   </div>
+  <!-- scrolled -->
+  <script>
+    window.onscroll = function() {s1()};
+    function s1() {
+      if (document.body.scrollTop > 768 || document.documentElement.scrollTop > 768) {
+        document.getElementById("page1").className = "content";
+      }
+    }
+  </script>
 
   <!-- page 2 -->
   <div id="page2">
