@@ -21,6 +21,7 @@
     });
     });
   </script>
+
   <style>
 
     @import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);    
@@ -53,92 +54,6 @@
       background-size: cover;
     }
 
-    /* front title */
-    .header {
-      padding: 180px;
-      text-align: center;
-      color: black;
-      font-size: 30px;
-      border: none;
-      margin-top: 350px;
-
-      animation: fadeInAnimation ease 3s;
-      animation-iteration-count: 1;
-      animation-fill-mode: forwards;
-    }
-    @keyframes fadeInAnimation {
-        0% {
-            opacity: 0;
-        }
-        100% {
-            opacity: 1;
-        }
-    }
-
-    @import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Poppins", sans-serif;
-    }
-    .content {
-      position: relative;
-    }
-    .content h2 {
-      color: #fff;
-      font-size: 8em;
-      position: absolute;
-      transform: translate(70%, 70%);
-    }
-    .content h2:nth-child(1) {
-      color: transparent;
-      -webkit-text-stroke: 2px #1B4F72;
-    }
-    .content h2:nth-child(2) {
-      color: #1B4F72;
-      animation: WaterWaveAnimation 4s ease-in-out infinite;
-    }
-    @keyframes WaterWaveAnimation {
-      0%,
-      100% {
-        clip-path: polygon(
-          0% 45%,
-          16% 44%,
-          33% 50%,
-          54% 60%,
-          70% 61%,
-          84% 59%,
-          100% 52%,
-          100% 100%,
-          0% 100%
-        );
-      }
-      50% {
-        clip-path: polygon(
-          0% 60%,
-          15% 65%,
-          34% 66%,
-          51% 62%,
-          67% 50%,
-          84% 45%,
-          100% 46%,
-          100% 100%,
-          0% 100%
-        );
-      }
-    }
-
-    /* first title */
-    .head1 {
-      padding: 180px;
-      text-align: center;
-      color: white;
-      font-size: 100px;
-      border: none;
-    }
-
     /* lottery button */
     .lty {
       margin-top: 400px;
@@ -161,25 +76,6 @@
       box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
     }
 
-    /* front entry button */
-    .btn {
-      background-color: #1B4F72;
-      border: 2px solid #008CBA; /* Blue */
-      border-radius: 12px;
-      color: white;
-      padding: 10px 24px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 20px;
-      transition-duration: 0.4s;
-    }
-    .btn:hover {
-      background-color: #008CBA; /* Blue */
-      color: black;
-      box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-    }
-    
     /* contents */
     .topcont {
       margin-top: 10%;
@@ -246,10 +142,103 @@
     html {
       scroll-behavior: smooth;
     }
+
     #page0 {
       height: 768px;
       text-align: center;      
     } 
+    @import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+    .content {
+      position: relative;
+    }
+    .content h2 {
+      color: #fff;
+      font-size: 8em;
+      position: absolute;
+      transform: translate(70%, 70%);
+    }
+    .content h2:nth-child(1) {
+      color: transparent;
+      -webkit-text-stroke: 2px #1B4F72;
+    }
+    .content h2:nth-child(2) {
+      color: #1B4F72;
+      animation: WaterWaveAnimation 4s ease-in-out infinite;
+    }
+    @keyframes WaterWaveAnimation {
+      0%,
+      100% {
+        clip-path: polygon(
+          0% 45%,
+          16% 44%,
+          33% 50%,
+          54% 60%,
+          70% 61%,
+          84% 59%,
+          100% 52%,
+          100% 100%,
+          0% 100%
+        );
+      }
+      50% {
+        clip-path: polygon(
+          0% 60%,
+          15% 65%,
+          34% 66%,
+          51% 62%,
+          67% 50%,
+          84% 45%,
+          100% 46%,
+          100% 100%,
+          0% 100%
+        );
+      }
+    }
+    /* front entry button */
+    .header {
+      padding: 180px;
+      text-align: center;
+      color: black;
+      font-size: 30px;
+      border: none;
+      margin-top: 350px;
+
+      animation: fadeInAnimation ease 3s;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+    }
+    @keyframes fadeInAnimation {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    .btn {
+      background-color: #1B4F72;
+      border: 2px solid #008CBA; /* Blue */
+      border-radius: 12px;
+      color: white;
+      padding: 10px 24px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 20px;
+      transition-duration: 0.4s;
+    }
+    .btn:hover {
+      background-color: #008CBA; /* Blue */
+      color: black;
+      box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    }
+    
     #page1 {
       height: 768px;
       text-align: center;
@@ -285,7 +274,46 @@
     #page4 {
       height: 768px;
       text-align: center;
-    } 
+    }
+    /* first title */
+    .head1 {
+      padding: 150px;
+      text-align: center;
+      color: white;
+      font-size: 100px;
+      border: none;
+    }
+    @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    .waviy {
+      position: relative;
+      -webkit-box-reflect: below -20px linear-gradient(transparent, rgba(0,0,0,.2));
+      font-size: 60px;
+    }
+    .waviy span {
+      font-family: 'Alfa Slab One', cursive;
+      position: relative;
+      display: inline-block;
+      color: #186A3B;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      text-transform: uppercase;
+      animation: waviy 1s infinite;
+      animation-delay: calc(.1s * var(--i));
+    }
+    @keyframes waviy {
+      0%,40%,100% {
+        transform: translateY(0)
+      }
+      20% {
+        transform: translateY(-20px)
+      }
+    }
+
     #page5 {
       height: 768px;
       text-align: center;
@@ -358,9 +386,14 @@
     <div id="page4">
       <!-- header -->
       <h1 class="head1">第 一 關</h1>
-      <a class="btn">觥籌交錯<br></a>
-      <!-- next page -->
-      <a href="#page5" class="next round">&#8250;</a>
+      <div class="waviy">
+        <span style="--i:1">觥</span>
+        <span style="--i:2">籌</span>
+        <span style="--i:3">交</span>
+        <span style="--i:4">錯</span>
+        <!-- next page -->
+        <a href="#page5" class="next round">&#8250;</a>
+      </div>
     </div>
   </div>
 
