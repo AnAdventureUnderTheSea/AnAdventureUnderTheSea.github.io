@@ -22,7 +22,8 @@
     });
   </script>
   <style>
-    @import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
+
+    @import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);    
     body {
       font-family: ‘Noto Sans TC’, sans-serif;
       font-weight:800;
@@ -36,6 +37,17 @@
     }
     .bgi1 {
       background-image: url('http://www.abirus.ru/user/Image/Mounts/huas1.jpeg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+    .bgi2 {
+      background-image: url('https://img.freepik.com/fotos-premium/interior-cocina-madera-amueblada-moderna_43151-3581.jpg?w=1380');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+    .bgin {
       background-repeat: no-repeat;
       background-attachment: fixed;
       background-size: cover;
@@ -60,6 +72,70 @@
         100% {
             opacity: 1;
         }
+    }
+
+    @import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+    .content {
+      position: relative;
+    }
+    .content h2 {
+      color: #fff;
+      font-size: 8em;
+      position: absolute;
+      transform: translate(80%, 80%);
+    }
+    .content h2:nth-child(1) {
+      color: transparent;
+      -webkit-text-stroke: 2px #03a9f4;
+    }
+    .content h2:nth-child(2) {
+      color: #03a9f4;
+      animation: WaterWaveAnimation 4s ease-in-out infinite;
+    }
+    @keyframes WaterWaveAnimation {
+      0%,
+      100% {
+        clip-path: polygon(
+          0% 45%,
+          16% 44%,
+          33% 50%,
+          54% 60%,
+          70% 61%,
+          84% 59%,
+          100% 52%,
+          100% 100%,
+          0% 100%
+        );
+      }
+      50% {
+        clip-path: polygon(
+          0% 60%,
+          15% 65%,
+          34% 66%,
+          51% 62%,
+          67% 50%,
+          84% 45%,
+          100% 46%,
+          100% 100%,
+          0% 100%
+        );
+      }
+    }
+
+    /* first title */
+    .head1 {
+      padding: 180px;
+      text-align: center;
+      color: white;
+      font-size: 100px;
+      border: none;
     }
 
     /* lottery button */
@@ -220,11 +296,17 @@
 <body>
   <div class="bgi0">
     <!-- front page -->
-    <div id="page0" class="header">
+    <div id="page0">
       <!-- header -->
+      <section>
+        <div class="content">
+          <h2>海底冒險記</h2>
+          <h2>海底冒險記</h2>
+        </div>
+      </section>
       <h1>海底冒險記</h1>
       <!-- next page -->
-      <a class="btn" href="#page1">一起踏上冒險的旅程吧！</a>
+      <a class="btn header" href="#page1">一起踏上冒險的旅程吧！</a>
     </div>
     
     <!-- page 1 -->
@@ -271,10 +353,15 @@
     </div>
   </div>
 
-  <!-- page 4 -->
-  <div id="page4">
-    <a class="topcont">來！<br></a>
-    <a href="#page5" class="next round">&#8250;</a>
+  <div class="bgi2">
+    <!-- page 4 -->
+    <div id="page4">
+      <!-- header -->
+      <h1 class="head1">第 一 關</h1>
+      <a class="btn">觥籌交錯<br></a>
+      <!-- next page -->
+      <a href="#page5" class="next round">&#8250;</a>
+    </div>
   </div>
 
   <!-- page 5 -->
