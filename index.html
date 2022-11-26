@@ -1,33 +1,34 @@
 <!DOCTYPE html>
 <html>
-  
+
 <head>
-  <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+    crossorigin="anonymous"></script>
   <script>
-    $(document).ready(function() {
-    /* Every time the window is scrolled ... */
-    $(window).scroll(function() {
-      /* Check the location of each desired element */
-      $('.hideme').each(function(i) {
-        var bottom_of_object = $(this).offset().top + $(this).outerHeight();
-        var bottom_of_window = $(window).scrollTop() + $(window).height();
-        /* If the object is completely visible in the window, fade it it */
-        if (bottom_of_window > bottom_of_object) {
-          $(this).animate({
-            'opacity': '1'
-          },  1000);  
-        }
+    $(document).ready(function () {
+      /* Every time the window is scrolled ... */
+      $(window).scroll(function () {
+        /* Check the location of each desired element */
+        $('.hideme').each(function (i) {
+          var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+          var bottom_of_window = $(window).scrollTop() + $(window).height();
+          /* If the object is completely visible in the window, fade it it */
+          if (bottom_of_window > bottom_of_object) {
+            $(this).animate({
+              'opacity': '1'
+            }, 1000);
+          }
+        });
       });
-    });
     });
   </script>
 
   <style>
+    @import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
 
-    @import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);    
     body {
       font-family: ‘Noto Sans TC’, sans-serif;
-      font-weight:800;
+      font-weight: 800;
     }
 
     .bgi0 {
@@ -36,18 +37,21 @@
       background-attachment: fixed;
       background-size: cover;
     }
+
     .bgi1 {
       background-image: url('http://www.abirus.ru/user/Image/Mounts/huas1.jpeg');
       background-repeat: no-repeat;
       background-attachment: fixed;
       background-size: cover;
     }
+
     .bgi2 {
       background-image: url('https://img.freepik.com/fotos-premium/interior-cocina-madera-amueblada-moderna_43151-3581.jpg?w=1380');
       background-repeat: no-repeat;
       background-attachment: fixed;
       background-size: cover;
     }
+
     .bgin {
       background-repeat: no-repeat;
       background-attachment: fixed;
@@ -58,9 +62,10 @@
     .lty {
       margin-top: 400px;
       font-family: ‘Noto Sans TC’, sans-serif;
-      font-weight:800;
+      font-weight: 800;
       background-color: white;
-      border: 2px solid #008CBA; /* Blue */
+      border: 2px solid #008CBA;
+      /* Blue */
       border-radius: 12px;
       color: black;
       padding: 10px 24px;
@@ -70,17 +75,20 @@
       font-size: 20px;
       transition-duration: 0.4s;
     }
+
     .lty:hover {
-      background-color: #008CBA; /* Blue */
+      background-color: #008CBA;
+      /* Blue */
       color: white;
-      box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+      box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
     }
 
     /* contents */
     .topcont {
       margin-top: 10%;
-      background: rgba(0,0,0,0.3);
-      border: 2px solid #008CBA; /* Blue */
+      background: rgba(0, 0, 0, 0.3);
+      border: 2px solid #008CBA;
+      /* Blue */
       border-radius: 12px;
       color: white;
       padding: 10px 24px;
@@ -90,10 +98,12 @@
       font-size: 20px;
       transition-duration: 0.2s;
     }
+
     .botcont {
       margin-top: 10%;
-      background: rgba(0,0,0,0.3);
-      border: 2px solid #008CBA; /* Blue */
+      background: rgba(0, 0, 0, 0.3);
+      border: 2px solid #008CBA;
+      /* Blue */
       border-radius: 12px;
       color: white;
       padding: 10px 24px;
@@ -105,19 +115,18 @@
     }
 
     /* content fade in animation */
-    #container
-    {
-      height:2000px;    
+    #container {
+      height: 2000px;
     }
-    #container DIV
-    { 
-      margin:50px; 
-      padding:50px; 
-      background-color:lightgreen; 
+
+    #container DIV {
+      margin: 50px;
+      padding: 50px;
+      background-color: lightgreen;
     }
-    .hideme
-    {
-      opacity:0;
+
+    .hideme {
+      opacity: 0;
     }
 
     /* button next */
@@ -126,14 +135,17 @@
       display: inline-block;
       padding: 8px 16px;
     }
+
     a:hover {
       background-color: #ddd;
       color: black;
     }
+
     .next {
       background-color: #04AA6D;
       color: white;
     }
+
     .round {
       border-radius: 50%;
     }
@@ -145,63 +157,69 @@
 
     #page0 {
       height: 768px;
-      text-align: center;      
-    } 
+      text-align: center;
+    }
+
     @import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
       font-family: "Poppins", sans-serif;
     }
+
     .content {
       position: relative;
     }
+
     .content h2 {
       color: #fff;
       font-size: 8em;
       position: absolute;
       transform: translate(-50%, 80%);
-      
+
       left: 50%;
     }
+
     .content h2:nth-child(1) {
       color: transparent;
       -webkit-text-stroke: 2px #1B4F72;
     }
+
     .content h2:nth-child(2) {
       color: #1B4F72;
       animation: WaterWaveAnimation 4s ease-in-out infinite;
     }
+
     @keyframes WaterWaveAnimation {
+
       0%,
       100% {
-        clip-path: polygon(
-          0% 45%,
-          16% 44%,
-          33% 50%,
-          54% 60%,
-          70% 61%,
-          84% 59%,
-          100% 52%,
-          100% 100%,
-          0% 100%
-        );
+        clip-path: polygon(0% 45%,
+            16% 44%,
+            33% 50%,
+            54% 60%,
+            70% 61%,
+            84% 59%,
+            100% 52%,
+            100% 100%,
+            0% 100%);
       }
+
       50% {
-        clip-path: polygon(
-          0% 60%,
-          15% 65%,
-          34% 66%,
-          51% 62%,
-          67% 50%,
-          84% 45%,
-          100% 46%,
-          100% 100%,
-          0% 100%
-        );
+        clip-path: polygon(0% 60%,
+            15% 65%,
+            34% 66%,
+            51% 62%,
+            67% 50%,
+            84% 45%,
+            100% 46%,
+            100% 100%,
+            0% 100%);
       }
     }
+
     /* front entry button */
     .header {
       padding: 180px;
@@ -215,17 +233,21 @@
       animation-iteration-count: 1;
       animation-fill-mode: forwards;
     }
+
     @keyframes fadeInAnimation {
-        0% {
-            opacity: 0;
-        }
-        100% {
-            opacity: 1;
-        }
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
     }
+
     .btn {
       background-color: #1B4F72;
-      border: 2px solid #008CBA; /* Blue */
+      border: 2px solid #008CBA;
+      /* Blue */
       border-radius: 12px;
       color: white;
       padding: 10px 24px;
@@ -235,12 +257,14 @@
       font-size: 20px;
       transition-duration: 0.4s;
     }
+
     .btn:hover {
-      background-color: #008CBA; /* Blue */
+      background-color: #008CBA;
+      /* Blue */
       color: black;
-      box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+      box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
     }
-    
+
     #page1 {
       height: 768px;
       text-align: center;
@@ -248,35 +272,41 @@
       scroll-margin-block-start: 110px;
       scroll-margin-block-end: 110px;
       */
-    } 
+    }
+
     .p1 {
       background-image: url('https://drive.google.com/uc?export=view&id=18B2QrNIHZJ6DubZZmvsmjN5dl4_k-MXe');
       background-repeat: no-repeat;
       background-attachment: fixed;
       background-size: cover;
     }
+
     #page2 {
       height: 768px;
       text-align: center;
-    } 
+    }
+
     .p2 {
-      background-image: url('https://drive.google.com/uc?export=view&id=16EEm5hlI71ISbS2fFBA4pg9CKfb013Bk'), 
+      background-image: url('https://drive.google.com/uc?export=view&id=16EEm5hlI71ISbS2fFBA4pg9CKfb013Bk'),
         url('https://drive.google.com/uc?export=view&id=18B2QrNIHZJ6DubZZmvsmjN5dl4_k-MXe');
-      
+
       background-repeat: no-repeat;
       background-attachment: fixed;
       background-size: 30%, 85%;
       background-position-x: 300px, 700px;
       background-position-y: bottom, top;
     }
+
     #page3 {
       height: 768px;
       text-align: center;
-    } 
+    }
+
     #page4 {
       height: 768px;
       text-align: center;
     }
+
     /* first title */
     .head1 {
       padding: 150px;
@@ -285,17 +315,21 @@
       font-size: 100px;
       border: none;
     }
+
     @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+
     * {
       padding: 0;
       margin: 0;
       box-sizing: border-box;
     }
+
     .waviy {
       position: relative;
-      -webkit-box-reflect: below -20px linear-gradient(transparent, rgba(0,0,0,.2));
+      -webkit-box-reflect: below -20px linear-gradient(transparent, rgba(0, 0, 0, .2));
       font-size: 60px;
     }
+
     .waviy span {
       font-family: 'Alfa Slab One', cursive;
       position: relative;
@@ -307,10 +341,15 @@
       animation: waviy 1s infinite;
       animation-delay: calc(.1s * var(--i));
     }
+
     @keyframes waviy {
-      0%,40%,100% {
+
+      0%,
+      40%,
+      100% {
         transform: translateY(0)
       }
+
       20% {
         transform: translateY(-20px)
       }
@@ -319,11 +358,60 @@
     #page5 {
       height: 768px;
       text-align: center;
-    } 
-    
+    }
+
+    #page6 {
+      height: 768px;
+      text-align: center;
+    }
+
+    #page7 {
+      height: 768px;
+      text-align: center;
+    }
+
+    #page8 {
+      height: 768px;
+      text-align: center;
+    }
+
+    #page9 {
+      height: 768px;
+      text-align: center;
+    }
+
+    #page10 {
+      height: 768px;
+      text-align: center;
+    }
+
+    #page11 {
+      height: 768px;
+      text-align: center;
+    }
+
+    #page12 {
+      height: 768px;
+      text-align: center;
+    }
+
+    #page13 {
+      height: 768px;
+      text-align: center;
+    }
+
+    #page14 {
+      height: 768px;
+      text-align: center;
+    }
+
+    #page15 {
+      height: 768px;
+      text-align: center;
+    }
   </style>
 </head>
-  
+
 <body>
   <div class="bgi0">
     <!-- front page -->
@@ -338,13 +426,13 @@
       <!-- next page -->
       <a class="btn header" href="#page1">一起踏上冒險的旅程吧！</a>
     </div>
-    
+
     <!-- page 1 -->
     <div id="page1" class="p1">
       <a class="hideme botcont">在海底世界有個鯊魚國，<br>
         統治鯊魚國的國王是一位溫柔的君主，在他的統治下，鯊魚國的人民過著平靜和樂的日子。<br>
         但在某一日，老鯊魚國王突如其來的倒下了。<br>
-        三位鯊魚王子眼看獨自養育三人長大的父王瀕臨命危，決心竭盡一切尋找拯救父親的辦法。<br><br>        
+        三位鯊魚王子眼看獨自養育三人長大的父王瀕臨命危，決心竭盡一切尋找拯救父親的辦法。<br><br>
         海底最懂得醫術的巫醫已仙逝多年。<br>
         王子們於是請來巫醫的傳人，一位用寬大的帽沿遮擋容貌的巫女燈籠魚。<br>
         看著老國王在病痛的折磨下蒼白的模樣，她低垂著頭，顫巍巍地用沙啞的聲音向王子們說話。<br>
@@ -358,7 +446,7 @@
       <a class="hideme topcont">
         巫女告訴王子們，尋常的藥物無法醫治國王。<br>
         但是海底世界有一個傳說，一處名曰「狂鯊之巔」的禁地，<br>
-        禁地裡面有個神藥可以痊癒任何疾病。<br><br>      
+        禁地裡面有個神藥可以痊癒任何疾病。<br><br>
         三位小鯊魚王子毅然決然要去禁地尋找神藥來拯救父王。<br>
         在離開之前，巫女拿出一個錦囊交給王子們，並囑咐他們務必緊要關頭才能打開。
       </a>
@@ -397,15 +485,88 @@
         <a href="#page5" class="next round">&#8250;</a>
       </div>
     </div>
+
+    <!-- page 5 -->
+    <div id="page5">
+      <a class="topcont">三位鯊魚王子進入狂鯊之巔，突然眼前一閃，眼前的場景徹底變了樣。
+        只聽見遙遠的地方傳來了死板而毫無抑揚頓挫的聲音，<br>
+        「歡迎考生來到考場。」</a>
+      <a href="#page6" class="next round">&#8250;</a>
+    </div>
+
+    <!-- page 6 -->
+    <div id="page6">
+      <a class="topcont">「這裡是章魚怪的小屋，章魚怪的興趣是烹飪美食與客人一同享用。」<br>
+        「他有四套餐具。但是他家的食物不多，只夠三份，沒吃到章魚怪食物的就要面臨死亡。」<br>
+        「考試規則，不得破壞餐具。」
+      </a>
+      <a href="#page7" class="next round">&#8250;</a>
+    </div>
+
+    <!-- page 7 -->
+    <div id="page7">
+      <a class="topcont">三位鯊王子面面相覷，滿頭疑問。<br>
+        這時一個腳步聲由遠而近，章魚怪陡然出現在他們面前。<br>
+        「又有新食…唔，又有客人來了。」
+      </a>
+      <a href="#page8" class="next round">&#8250;</a>
+    </div>
+
+    <!-- page 8 -->
+    <div id="page8">
+      <a class="topcont">章魚怪轉身進了廚房。<br>
+        廚房內隱隱約約飄出了魚湯的味道。
+        三位鯊王子坐在餐桌上，聽著霍霍的磨刀聲，頓時鯊皮疙瘩都起來了，三隻鯊鯊瑟瑟發抖。<br>
+        廚房這時又傳出鯊魚怪的聲音，<br>
+        「你們知道嗎？用最鋒利的刀子，處理剛捕到的魚，<br>
+        他們眼睜睜看刀子即將落在他們身上的恐懼感，<br>
+        他們身體高速的抖動，減少他們身上的肥油，往往都會成為最鮮甜的生魚片。」<br>
+        章魚怪描述著魚肉滿漢全席的美味，自我陶醉了片刻，<br>
+        「你們會愛上的。」<br>
+        他停頓了一會，<br>
+        「魚肉滿漢全席有點多，我需要好心的客人來幫我一下。」
+      </a>
+      <a href="#page9" class="next round">&#8250;</a>
+    </div>
+
+    <!-- page 9 -->
+    <div id="page9">
+      <a class="topcont">鯊三主動跳出來表示願意幫章魚怪的忙。<br>
+        章魚怪告訴鯊王子們，幫忙的時候一定要小心，<br>
+        這屋子裡，誰不小心損壞餐具，誰就會受到處罰。<br>
+        「唔……你們也不想餓著肚子，變成別人的食物吧？」
+      </a>
+      <a href="#page10" class="next round">&#8250;</a>
+    </div>
+
+    <!-- page 10 -->
+    <div id="page10">
+      <a class="topcont">章魚怪小心翼翼的拿起酒杯交給鯊三，<br>
+        鯊三心想著區區幾的酒杯有必要如此得小心翼翼嗎？<br>
+      </a>
+      <a href="#page11" class="next round">&#8250;</a>
+    </div>
+
+    <!-- page 9 -->
+    <div id="page9">
+      <a class="topcont">來！<br></a>
+      <a href="#page10" class="next round">&#8250;</a>
+    </div>
   </div>
 
-  <!-- page 5 -->
-  <div id="page5">
+  <!-- page n -->
+  <div id="pagen">
+    <a class="topcont">來！<br></a>
+    <a href="#pagenn" class="next round">&#8250;</a>
+  </div>
+
+  <!-- page n -->
+  <div id="pagen">
     <a class="topcont">來！<br></a>
     <a href="https://anadventureunderthesea.github.io" class="next round">&#8250;</a>
   </div>
 
-  
+
   <!-- page 4 --
   <div id="page4">
     <a class="hideme topcont">來試試手氣吧！</a>
@@ -460,4 +621,5 @@
   <meta http-equiv="refresh" content="3 ; url=https://anadventureunderthesea.github.io/godfruit.html">
   -->
 </body>
+
 </html>
