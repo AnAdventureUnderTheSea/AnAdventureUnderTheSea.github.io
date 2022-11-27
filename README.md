@@ -9,12 +9,13 @@ Backgrounds:
 * Interior de cocina de madera amueblada moderna https://www.freepik.es/fotos-premium/interior-cocina-madera-amueblada-moderna_11118880.htm
 * Cartoon illustration of cozy modern kitchen with dinner table and household appliances https://www.freepik.com/free-vector/cartoon-illustration-cozy-modern-kitchen-with-dinner-table-household-appliances_2890963.htm#query=kitchen&position=2&from_view=keyword
 * 時空幻境 熱情傳奇（テイルズ オブ ゼスティリア）https://clipthrough.com/wp-content/uploads/2017/03/Zestiria-1-759x500.jpg
-* 
+* Aquaventures, Inc. https://static.wixstatic.com/media/ddd36e_5a7f4ab23db74828b05d9050eea26c7c~mv2.jpg/v1/fill/w_1280,h_585,al_c,q_85,enc_auto/ddd36e_5a7f4ab23db74828b05d9050eea26c7c~mv2.jpg
 
 Spacial effects:
 * Water wave text animation effect https://codepen.io/alvarotrigo/pen/PoKMyzO
 * Scroll and fade in: https://codepen.io/annalarson/embed/AegVzq?default-tab=js%2Cresult&height=265&name=cp_embed_1&pen-title=Element%20Fade%20In%20on%20Scroll&slug-hash=GesqK&theme-id=default&user=annalarson
 * Bouncing With Reflection Text Animation https://codepen.io/alvarotrigo/pen/xxLvyOG
 * Loading Style CSS Text Animation https://codepen.io/alvarotrigo/pen/qBXeJab
-* 
+* Basic Text Animations https://codepen.io/alvarotrigo/pen/PoKMyWE
+
 

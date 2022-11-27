@@ -60,7 +60,7 @@
     }
 
     .bgi4 {
-      background-image: url('https://clipthrough.com/wp-content/uploads/2017/03/Zestiria-1-759x500.jpg');
+      background-image: url('https://static.wixstatic.com/media/ddd36e_5a7f4ab23db74828b05d9050eea26c7c~mv2.jpg/v1/fill/w_1280,h_585,al_c,q_85,enc_auto/ddd36e_5a7f4ab23db74828b05d9050eea26c7c~mv2.jpg');
       background-repeat: no-repeat;
       background-attachment: fixed;
       background-size: cover;
@@ -331,16 +331,19 @@
     }
 
     @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+
     * {
       padding: 0;
       margin: 0;
       box-sizing: border-box;
     }
+
     .waviy {
       position: relative;
       -webkit-box-reflect: below -20px linear-gradient(transparent, rgba(0, 0, 0, .2));
       font-size: 60px;
     }
+
     .waviy span {
       font-family: 'Alfa Slab One', cursive;
       position: relative;
@@ -352,7 +355,9 @@
       animation: waviy 1s infinite;
       animation-delay: calc(.1s * var(--i));
     }
+
     @keyframes waviy {
+
       0%,
       40%,
       100% {
@@ -413,48 +418,60 @@
       height: 768px;
       text-align: center;
     }
+
     @import url(https://fonts.googleapis.com/css?family=Montserrat);
-    html{
+
+    html {
       height: 100%;
       font-weight: 800;
     }
+
     svg {
-        display: block;
-        font: 10.5em 'Montserrat';
-        width: 960px;
-        height: 300px;
-        margin: 0 auto;
+      display: block;
+      font: 10.5em 'Montserrat';
+      width: 960px;
+      height: 300px;
+      margin: 0 auto;
     }
+
     .text-copy {
-        fill: none;
-        stroke: white;
-        stroke-dasharray: 6% 29%;
-        stroke-width: 5px;
-        stroke-dashoffset: 0%;
-        animation: stroke-offset 5.5s infinite linear;
+      fill: none;
+      stroke: white;
+      stroke-dasharray: 6% 29%;
+      stroke-width: 5px;
+      stroke-dashoffset: 0%;
+      animation: stroke-offset 5.5s infinite linear;
     }
-    .text-copy:nth-child(1){
+
+    .text-copy:nth-child(1) {
       stroke: #4D163D;
       animation-delay: -1;
     }
-    .text-copy:nth-child(2){
+
+    .text-copy:nth-child(2) {
       stroke: #840037;
       animation-delay: -2s;
     }
-    .text-copy:nth-child(3){
+
+    .text-copy:nth-child(3) {
       stroke: #BD0034;
       animation-delay: -3s;
     }
-    .text-copy:nth-child(4){
+
+    .text-copy:nth-child(4) {
       stroke: #BD0034;
       animation-delay: -4s;
     }
-    .text-copy:nth-child(5){
+
+    .text-copy:nth-child(5) {
       stroke: #FDB731;
       animation-delay: -5s;
     }
-    @keyframes stroke-offset{
-      100% {stroke-dashoffset: -35%;}
+
+    @keyframes stroke-offset {
+      100% {
+        stroke-dashoffset: -35%;
+      }
     }
 
     #page15 {
@@ -495,6 +512,62 @@
     #page22 {
       height: 768px;
       text-align: center;
+    }
+
+    /* clear background */
+    h2 {
+      font-family: helvetica, arial, sans-serif;
+      font-size: 20px;
+      perspective: 500px;
+      text-align: center;
+      padding: 16px;
+      margin: 0;
+    }
+
+    /* crops animations that exceeds one line area */
+    .line {
+      width: 100%;
+      height: 14rem;
+      overflow: hidden;
+      border: none;
+      padding: 10px;
+      margin-bottom: 16px;
+    }
+
+    /* subtle zoom to attention and then back */
+    .pop-outin {
+      animation: 2s anim-popoutin ease infinite;
+    }
+
+    @keyframes anim-popoutin {
+      0% {
+        color: #04AA6D;
+        transform: scale(0);
+        opacity: 0;
+        text-shadow: 0 0 0 rgba(0, 0, 0, 0);
+      }
+
+      25% {
+        color: #E67E22;
+        transform: scale(2);
+        opacity: 1;
+        text-shadow: 3px 10px 5px rgba(0, 0, 0, 0.5);
+      }
+
+      50% {
+        color: #04AA6D;
+        transform: scale(1);
+        opacity: 1;
+        text-shadow: 1px 0 0 rgba(0, 0, 0, 0);
+      }
+
+      100% {
+        /* animate nothing to add pause at the end of animation */
+        color: #04AA6D;
+        transform: scale(1);
+        opacity: 1;
+        text-shadow: 1px 0 0 rgba(0, 0, 0, 0);
+      }
     }
 
     #page23 {
@@ -655,7 +728,7 @@
       <a class="topcont">如此想著，鯊三隨手拿起酒杯便把玩了起來，<br>
         章魚怪一見，突然生氣的對鯊三大聲吼叫，<br>
         「對餐具如此的不尊重，你滾回餐桌吧！」
-        </a>
+      </a>
       <a href="#page12" class="next round">&#8250;</a>
     </div>
 
@@ -664,8 +737,8 @@
       <a class="topcont">於是章魚怪又獨自在廚房忙碌了起來，<br>
         待餐點都上齊了，章魚怪從廚房端著酒杯出來。<br>
         他的注意力全放在酒杯身上，沒注意此時的鯊三正在他的後方，<br>
-        鯊三抓緊機會，擺動他長而有力的尾巴，偷襲章魚怪。        
-        </a>
+        鯊三抓緊機會，擺動他長而有力的尾巴，偷襲章魚怪。
+      </a>
       <a href="#page13" class="next round">&#8250;</a>
     </div>
 
@@ -675,8 +748,8 @@
         幾秒後才反應過來，但已經遲了。<br>
         酒杯掉在地上，變成了碎片。他的眼睛陡然瞪大，滿是驚恐。<br>
         只聽見萬分痛苦的慘叫聲，章魚怪的身體像是被擠壓成了小球，如光點一般鑽進了鯊三的眉心。<br>
-        片刻後遙遠的聲音響起，他們又被傳送去了下一個關卡。        
-        </a>
+        片刻後遙遠的聲音響起，他們又被傳送去了下一個關卡。
+      </a>
       <a href="#page14" class="next round">&#8250;</a>
     </div>
   </div>
@@ -691,7 +764,7 @@
           <text text-anchor="middle" x="50%" y="50%">海.底.牢.籠. </text>
           <text text-anchor="middle" x="52%" y="50%">海.底.牢.籠. </text>
         </symbol>
-        <g class = "g-ants">
+        <g class="g-ants">
           <use xlink:href="#s-text" class="text-copy"></use>
           <use xlink:href="#s-text" class="text-copy"></use>
           <use xlink:href="#s-text" class="text-copy"></use>
@@ -700,7 +773,7 @@
         </g>
       </svg>
     </div>
-    
+
     <!-- page 15 -->
     <div id="page15">
       <a class="topcont">三位鯊王子來到了第二個地方，一個幻境，<br>
@@ -712,11 +785,11 @@
         而美人魚也有兩大技能，<br>
         技能一囚牢：被點名玩家無法使用技能，且10秒後馬上死亡，除非破壞掉身上的牢籠。<br>
         技能二冰凍：此狀態無法被驅散，技能會減速目標並造成傷害，累積中10次，將變成冰雕狀態三分鐘。<br>
-        當美人魚血量50%時，會瞬間回滿血，進入狂暴狀態。        
-        </a>
+        當美人魚血量50%時，會瞬間回滿血，進入狂暴狀態。
+      </a>
       <a href="#page16" class="next round">&#8250;</a>
     </div>
-    
+
     <!-- page 16 -->
     <div id="page16">
       <a class="topcont">「是你嗎？」美人魚的語氣繾綣輕柔。<br>
@@ -734,7 +807,7 @@
         他控制章魚怪全力破壞牢籠，並指揮鯊大放出治療技能，回復大家身上零星的傷害。<br>
         萬幸的是，章魚怪破壞力十足。他輕而易舉地破壞牢籠，將鯊二解救出來。<br>
         鯊二連忙使出劇毒配合鯊三的電鰻，成功地打出傷害連擊，造成美人魚15%傷害。
-        </a>
+      </a>
       <a href="#page18" class="next round">&#8250;</a>
     </div>
 
@@ -755,7 +828,7 @@
         來不及消化對死亡的恐懼，鯊三連忙指揮鯊大、鯊二放出技能給自己並對美人魚進行攻擊，<br>
         又再次召喚出章魚怪來抵擋即將來臨的冰凍技能，<br>
         此時的美人魚血量剛好剩51%，在鯊二劇毒的箭影響下，緩慢地下降。
-        </a>
+      </a>
       <a href="#page20" class="next round">&#8250;</a>
     </div>
 
@@ -769,7 +842,7 @@
         「是我，」鯊三開口，「我們要怎麼解救你？」<br>
         「打開我身上的枷鎖就能救我。」美人魚回答。<br>
         鯊大打開了美人魚身上的枷鎖，她美麗的容顏上帶著笑容，與剛剛那副哀怨陰沉的模樣完全不同。
-        </a>
+      </a>
       <a href="#page21" class="next round">&#8250;</a>
     </div>
 
@@ -785,12 +858,83 @@
   </div>
 
   <div class="bgi4">
-
     <!-- page 22 -->
     <div id="page22">
-      <a class="topcont">來！<br></a>
+      <!-- header -->
+      <h1 class="head1">第 三 關</h1>
+      <div class='line'>
+        <h3 class='pop-outin'>燈火通明</h3>
+      </div>
       <a href="#page23" class="next round">&#8250;</a>
     </div>
+      
+    <!-- page 23 -->
+    <div id="page23">
+      <a class="topcont">三位鯊王子到了最後一關卡，遇到了最後的看守者--燈籠怪魚。<br>
+        燈籠怪魚一出現在他們眼前，便二話不說地發出了攻擊，<br>
+        在沒防備下的情形下，鯊王子們均受了輕重不等的傷。<br>
+        在這個絕望的時刻，鯊三想起了臨走前巫女給他們的錦囊。<br>
+        在錦囊打開的同時，整個空間劇烈地顫抖，空間中慢慢出現了裂縫，<br>
+        裂縫越變越大，直到一個能夠通行的大小，巫女從裂縫中現出了身形。
+        </a>
+      <a href="#page24" class="next round">&#8250;</a>
+    </div>
+
+    <!-- page 24 -->
+    <div id="page24">
+      <a class="topcont">「好久不見了，叔叔。」<br>
+        燈籠怪魚瞪著巫女愣了半晌，恍然大悟，露出震驚的神色：<br>
+        「是公主殿下……？」<br>
+        巫女沉默不語，只是微微點了頭。<br>
+        「當年你不顧一切毅然決然地出嫁，終究還是……」<br>
+        「罷了、罷了，你們過去吧，」燈籠怪魚轉身讓出了道路，漸遠的背影莫名地流露出無奈，<br>
+        「神藥就在前面，拿了就別再進來了……」<br>
+      </a>
+      <a href="#page25" class="next round">&#8250;</a>
+    </div>
+    
+    <!-- page 25 -->
+    <div id="page25">
+      <a class="topcont">在燈籠魚怪的指引下，鯊王子們順利來到了神藥之前。<br></a>
+      <div id="rand"></div>
+      <!-- lottery -->
+      <button class="hideme lty" onclick="lottery(1, 0, 2);">免費單抽一回</button>
+      <a href="#page26" class="next round">&#8250;</a>
+    </div>
+    <script>
+      function lottery() {
+        var x = parseInt(Math.random() * 10 % 3);
+        var y;
+        switch(x) {
+          case 0:
+            y = "上帝果實<br>時光到流";
+            break;
+          case 1:
+            y = "天使果實<br>治癒百病(限一人)";
+            break;
+          case 2:
+            y = "惡魔果實<br>死者復活";
+            break;
+          default:
+            y = "Lottery Failure";
+            break;
+        }
+        document.getElementById("rand").innerHTML = y;
+      }
+    </script>
+    
+    <!-- page n -->
+    <div id="pagen">
+      <a class="topcont">來！<br></a>
+      <a href="#pagen" class="next round">&#8250;</a>
+    </div>
+    
+    <!-- page n -->
+    <div id="pagen">
+      <a class="topcont">來！<br></a>
+      <a href="#pagen" class="next round">&#8250;</a>
+    </div>
+
   </div>
 
   <!-- page n -->
