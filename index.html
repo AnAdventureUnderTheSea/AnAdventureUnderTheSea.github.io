@@ -66,37 +66,6 @@
       background-size: cover;
     }
 
-    .bgin {
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      background-size: cover;
-    }
-
-    /* lottery button */
-    .lty {
-      margin-top: 400px;
-      font-family: ‘Noto Sans TC’, sans-serif;
-      font-weight: 800;
-      background-color: white;
-      border: 2px solid #008CBA;
-      /* Blue */
-      border-radius: 12px;
-      color: black;
-      padding: 10px 24px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 20px;
-      transition-duration: 0.4s;
-    }
-
-    .lty:hover {
-      background-color: #008CBA;
-      /* Blue */
-      color: white;
-      box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
-    }
-
     /* contents */
     .topcont {
       margin-top: 10%;
@@ -584,6 +553,153 @@
       height: 768px;
       text-align: center;
     }
+
+    /* lottery button */
+    .lty {
+      font-family: ‘Noto Sans TC’, sans-serif;
+      font-weight: 800;
+      background-color: white;
+      border: 2px solid #008CBA;
+      /* Blue */
+      border-radius: 12px;
+      color: black;
+      padding: 10px 24px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 20px;
+      transition-duration: 0.4s;
+      margin-left: 600px;
+    }
+
+    .lty:hover {
+      background-color: #008CBA;
+      /* Blue */
+      color: white;
+      box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    h4 {
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      width: 100vw;
+      color: white;
+      font-family: tahoma;
+      font-size: 3rem;
+      font-weight: 100;
+      line-height: 1.5;
+      text-transform: uppercase;
+      white-space: nowrap;
+      overflow: hidden;
+      position: relative;
+      width: 930px;
+    }
+
+    h4 span {
+      font-size: 40px;
+      margin-left: 40px;
+    }
+
+    .message {
+      background-color: yellow;
+      color: #333;
+      display: block;
+      font-weight: 900;
+      overflow: hidden;
+      position: absolute;
+      padding-left: 0.5rem;
+      top: 0.2rem;
+      left: 650px;
+      animation: openclose 5s ease-in-out infinite;
+    }
+
+    .word1,
+    .word2,
+    .word3 {
+      font-family: tahoma;
+    }
+
+    @keyframes openclose {
+      0% {
+        top: 0.2rem;
+        width: 0;
+      }
+
+      5% {
+        width: 0;
+      }
+
+      15% {
+        width: 230px;
+      }
+
+      30% {
+        top: 0.2rem;
+        width: 230px;
+      }
+
+      33% {
+        top: 0.2rem;
+        width: 0;
+      }
+
+      35% {
+        top: 0.2rem;
+        width: 0;
+      }
+
+      38% {
+        top: -4.5rem;
+
+      }
+
+      48% {
+        top: -4.5rem;
+        width: 190px;
+      }
+
+      62% {
+        top: -4.5rem;
+        width: 190px;
+      }
+
+      66% {
+        top: -4.5rem;
+        width: 0;
+        text-indent: 0;
+      }
+
+      71% {
+        top: -9rem;
+        width: 0;
+        text-indent: 5px;
+      }
+
+      86% {
+        top: -9rem;
+        width: 285px;
+      }
+
+      95% {
+        top: -9rem;
+        width: 285px;
+      }
+
+      98% {
+        top: -9rem;
+        width: 0;
+        text-indent: 5px;
+      }
+
+      100% {
+        top: 0;
+        width: 0;
+        text-indent: 0;
+      }
+    }
   </style>
 </head>
 
@@ -867,7 +983,7 @@
       </div>
       <a href="#page23" class="next round">&#8250;</a>
     </div>
-      
+
     <!-- page 23 -->
     <div id="page23">
       <a class="topcont">三位鯊王子到了最後一關卡，遇到了最後的看守者--燈籠怪魚。<br>
@@ -876,7 +992,7 @@
         在這個絕望的時刻，鯊三想起了臨走前巫女給他們的錦囊。<br>
         在錦囊打開的同時，整個空間劇烈地顫抖，空間中慢慢出現了裂縫，<br>
         裂縫越變越大，直到一個能夠通行的大小，巫女從裂縫中現出了身形。
-        </a>
+      </a>
       <a href="#page24" class="next round">&#8250;</a>
     </div>
 
@@ -892,20 +1008,27 @@
       </a>
       <a href="#page25" class="next round">&#8250;</a>
     </div>
-    
+
     <!-- page 25 -->
     <div id="page25">
       <a class="topcont">在燈籠魚怪的指引下，鯊王子們順利來到了神藥之前。<br></a>
       <div id="rand"></div>
-      <!-- lottery -->
-      <button class="hideme lty" onclick="lottery(1, 0, 2);">免費單抽一回</button>
+      <h4>
+        <div class="message">
+          <div class="word1">上帝果實</div>
+          <div class="word2">天使果實</div>
+          <div class="word3">惡魔果實</div>
+        </div>
+        <!-- lottery -->
+        <button class="hideme lty" onclick="lottery(1, 0, 2);">免費單抽神藥一回</button>
+      </h4>
       <a href="#page26" class="next round">&#8250;</a>
     </div>
     <script>
       function lottery() {
         var x = parseInt(Math.random() * 10 % 3);
         var y;
-        switch(x) {
+        switch (x) {
           case 0:
             y = "上帝果實<br>時光到流";
             break;
@@ -922,13 +1045,13 @@
         document.getElementById("rand").innerHTML = y;
       }
     </script>
-    
+
     <!-- page n -->
     <div id="pagen">
       <a class="topcont">來！<br></a>
       <a href="#pagen" class="next round">&#8250;</a>
     </div>
-    
+
     <!-- page n -->
     <div id="pagen">
       <a class="topcont">來！<br></a>
