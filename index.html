@@ -52,6 +52,13 @@
       background-size: cover;
     }
 
+    .bgi3 {
+      background-image: url('https://clipthrough.com/wp-content/uploads/2017/03/Zestiria-1-759x500.jpg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+
     .bgin {
       background-repeat: no-repeat;
       background-attachment: fixed;
@@ -317,19 +324,16 @@
     }
 
     @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
-
     * {
       padding: 0;
       margin: 0;
       box-sizing: border-box;
     }
-
     .waviy {
       position: relative;
       -webkit-box-reflect: below -20px linear-gradient(transparent, rgba(0, 0, 0, .2));
       font-size: 60px;
     }
-
     .waviy span {
       font-family: 'Alfa Slab One', cursive;
       position: relative;
@@ -341,9 +345,7 @@
       animation: waviy 1s infinite;
       animation-delay: calc(.1s * var(--i));
     }
-
     @keyframes waviy {
-
       0%,
       40%,
       100% {
@@ -404,8 +406,76 @@
       height: 768px;
       text-align: center;
     }
+    @import url(https://fonts.googleapis.com/css?family=Montserrat);
+    html{
+      height: 100%;
+      font-weight: 800;
+    }
+    svg {
+        display: block;
+        font: 10.5em 'Montserrat';
+        width: 960px;
+        height: 300px;
+        margin: 0 auto;
+    }
+    .text-copy {
+        fill: none;
+        stroke: white;
+        stroke-dasharray: 6% 29%;
+        stroke-width: 5px;
+        stroke-dashoffset: 0%;
+        animation: stroke-offset 5.5s infinite linear;
+    }
+    .text-copy:nth-child(1){
+      stroke: #4D163D;
+      animation-delay: -1;
+    }
+    .text-copy:nth-child(2){
+      stroke: #840037;
+      animation-delay: -2s;
+    }
+    .text-copy:nth-child(3){
+      stroke: #BD0034;
+      animation-delay: -3s;
+    }
+    .text-copy:nth-child(4){
+      stroke: #BD0034;
+      animation-delay: -4s;
+    }
+    .text-copy:nth-child(5){
+      stroke: #FDB731;
+      animation-delay: -5s;
+    }
+    @keyframes stroke-offset{
+      100% {stroke-dashoffset: -35%;}
+    }
 
     #page15 {
+      height: 768px;
+      text-align: center;
+    }
+
+    #page16 {
+      height: 768px;
+      text-align: center;
+    }
+
+    #page17 {
+      height: 768px;
+      text-align: center;
+    }
+
+    #page18 {
+      height: 768px;
+      text-align: center;
+    }
+
+    #page19 {
+      height: 768px;
+      text-align: center;
+    }
+
+    #page20 {
       height: 768px;
       text-align: center;
     }
@@ -542,15 +612,81 @@
     <!-- page 10 -->
     <div id="page10">
       <a class="topcont">章魚怪小心翼翼的拿起酒杯交給鯊三，<br>
-        鯊三心想著區區幾的酒杯有必要如此得小心翼翼嗎？<br>
+        鯊三心想區區幾個的酒杯，如此緊張未免太過計較了。
       </a>
       <a href="#page11" class="next round">&#8250;</a>
     </div>
 
-    <!-- page 9 -->
-    <div id="page9">
-      <a class="topcont">來！<br></a>
-      <a href="#page10" class="next round">&#8250;</a>
+    <!-- page 11 -->
+    <div id="page11">
+      <a class="topcont">如此想著，鯊三隨手拿起酒杯便把玩了起來，<br>
+        章魚怪一見，突然生氣的對鯊三大聲吼叫，<br>
+        「對餐具如此的不尊重，你滾回餐桌吧！」
+        </a>
+      <a href="#page12" class="next round">&#8250;</a>
+    </div>
+
+    <!-- page 12 -->
+    <div id="page12">
+      <a class="topcont">於是章魚怪又獨自在廚房忙碌了起來，<br>
+        待餐點都上齊了，章魚怪從廚房端著酒杯出來。<br>
+        他的注意力全放在酒杯身上，沒注意此時的鯊三正在他的後方，<br>
+        鯊三抓緊機會，擺動他長而有力的尾巴，偷襲章魚怪。        
+        </a>
+      <a href="#page13" class="next round">&#8250;</a>
+    </div>
+
+    <!-- page 13 -->
+    <div id="page13">
+      <a class="topcont">章魚怪受到偷襲，反射性地回身要去察看被偷襲的地方，<br>
+        幾秒後才反應過來，但已經遲了。<br>
+        酒杯掉在地上，變成了碎片。他的眼睛陡然瞪大，滿是驚恐。<br>
+        只聽見萬分痛苦的慘叫聲，章魚怪爆體而亡，就如地上的酒杯碎片一般。<br>
+        片刻後遙遠的聲音響起，他們又被傳送回了狂鯊之巔。        
+        </a>
+      <a href="#page14" class="next round">&#8250;</a>
+    </div>
+  </div>
+
+  <div class="bgi3">
+    <!-- page 14 -->
+    <div id="page14">
+      <h1 class="head1">第 二 關</h1>
+      <a href="#page15" class="next round">&#8250;</a>
+      <svg viewBox="0 0 960 300">
+        <symbol id="s-text">
+          <text text-anchor="middle" x="50%" y="50%">海.底.牢.籠. </text>
+          <text text-anchor="middle" x="52%" y="50%">海.底.牢.籠. </text>
+        </symbol>
+        <g class = "g-ants">
+          <use xlink:href="#s-text" class="text-copy"></use>
+          <use xlink:href="#s-text" class="text-copy"></use>
+          <use xlink:href="#s-text" class="text-copy"></use>
+          <use xlink:href="#s-text" class="text-copy"></use>
+          <use xlink:href="#s-text" class="text-copy"></use>
+        </g>
+      </svg>
+    </div>
+    
+    <!-- page 15 -->
+    <div id="page15">
+      <a class="topcont">三位鯊王子來到了第二個地方，一個幻境，<br>
+        眼前看到一隻巨大的美人魚身上帶著枷鎖。
+        這時腦海中浮出介紹，本關將賦予鯊大復活以及治療等技能，鯊二施加增減益輔助效果以及附上劇毒麻痺敵人的箭，給予鯊三召喚動物的技能。
+        美人魚有兩大技能，技能一囚牢：被點名玩家無法使用技能，且10秒後馬上死亡，除非破壞掉身上的牢籠。
+        技能二冰凍:此狀態無法被驅散，技能會減速目標並造成傷害，累積中10次，將變成冰雕狀態(無法使用技能)三分鐘。
+        當美人魚血量50%時，會瞬間回滿血，進入狂暴狀態。        
+        </a>
+      <a href="#page16" class="next round">&#8250;</a>
+    </div>
+    
+    <!-- page 16 -->
+    <div id="page16">
+      <a class="topcont">鯊三如此想著，隨手拿起酒杯便把玩了起來，<br>
+        章魚怪一見，突然生氣的對鯊三大聲吼叫，<br>
+        「對餐具如此的不尊重，你滾回餐桌吧！」
+        </a>
+      <a href="#page17" class="next round">&#8250;</a>
     </div>
   </div>
 
