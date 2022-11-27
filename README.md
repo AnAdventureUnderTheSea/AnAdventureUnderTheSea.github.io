@@ -15,5 +15,6 @@ Spacial effects:
 * Water wave text animation effect https://codepen.io/alvarotrigo/pen/PoKMyzO
 * Scroll and fade in: https://codepen.io/annalarson/embed/AegVzq?default-tab=js%2Cresult&height=265&name=cp_embed_1&pen-title=Element%20Fade%20In%20on%20Scroll&slug-hash=GesqK&theme-id=default&user=annalarson
 * Bouncing With Reflection Text Animation https://codepen.io/alvarotrigo/pen/xxLvyOG
+* Loading Style CSS Text Animation https://codepen.io/alvarotrigo/pen/qBXeJab
 * 
 
