@@ -2,12 +2,257 @@
 <html>
 
 <head>
+    <style>
+        @import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
 
+        body {
+            font-family: ‘Noto Sans TC’, sans-serif;
+            font-weight: 800;
+            background-image: url('https://1721181113.rsc.cdn77.org/data/thumbs/full/33052/650/0/0/0/ocean-floor.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        /* contents */
+        .cont {
+            margin-top: 10%;
+            background: rgba(0, 0, 0, 0.3);
+            border: 2px solid #008CBA;
+            /* Blue */
+            border-radius: 12px;
+            color: white;
+            padding: 10px 24px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 20px;
+            transition-duration: 0.2s;
+        }
+
+        #page0 {
+            height: 768px;
+            text-align: center;
+        }
+
+        #container {
+            position: absolute;
+            margin: auto;
+            width: 50vw;
+            height: 80pt;
+            top: 0;
+            bottom: 0;
+
+            filter: url(#threshold) blur(0.6px);
+        }
+
+        #text1,
+        #text2 {
+            position: absolute;
+            width: 100%;
+            display: inline-block;
+
+            font-size: 80pt;
+
+            text-align: center;
+
+            user-select: none;
+        }
+
+        /* button next */
+        a {
+            text-decoration: none;
+            display: inline-block;
+            padding: 8px 16px;
+        }
+
+        a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .next {
+            background-color: #04AA6D;
+            color: white;
+        }
+
+        .round {
+            border-radius: 50%;
+        }
+
+        #page1 {
+            height: 768px;
+            text-align: center;
+            /*
+            scroll-margin-block-start: 110px;
+            scroll-margin-block-end: 110px;
+            */
+        }
+
+        #page2 {
+            height: 768px;
+            text-align: center;
+        }
+
+        #page3 {
+            height: 768px;
+            text-align: center;
+        }
+
+        #page4 {
+            height: 768px;
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>惡魔果實</h1>
-    <p>I'm hosted with GitHub Pages.</p>
+    <!-- page 0 -->
+    <div id="page0">
+        <div id="container">
+            <span id="text1"></span>
+            <span id="text2"></span>
+        </div>
+        <svg id="filters">
+            <defs>
+                <filter id="threshold">
+                    <feColorMatrix in="SourceGraphic" type="matrix" values="1 0 0 0 0
+                                            0 1 0 0 0
+                                            0 0 1 0 0
+                                            0 0 0 255 -140" />
+                </filter>
+            </defs>
+        </svg>
+        <a href="#page1" class="next round">&#8250;</a>
+    </div>
+    <script>
+        const elts = {
+            text1: document.getElementById("text1"),
+            text2: document.getElementById("text2")
+        };
+
+        const texts = [
+            "結局二",
+            "惡魔果實",
+            "死者甦醒",
+        ];
+
+        const morphTime = 1;
+        const cooldownTime = 0.25;
+
+        let textIndex = texts.length - 1;
+        let time = new Date();
+        let morph = 0;
+        let cooldown = cooldownTime;
+
+        elts.text1.textContent = texts[textIndex % texts.length];
+        elts.text2.textContent = texts[(textIndex + 1) % texts.length];
+
+        function doMorph() {
+            morph -= cooldown;
+            cooldown = 0;
+
+            let fraction = morph / morphTime;
+
+            if (fraction > 1) {
+                cooldown = cooldownTime;
+                fraction = 1;
+            }
+
+            setMorph(fraction);
+        }
+
+        function setMorph(fraction) {
+            elts.text2.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`;
+            elts.text2.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
+
+            fraction = 1 - fraction;
+            elts.text1.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`;
+            elts.text1.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
+
+            elts.text1.textContent = texts[textIndex % texts.length];
+            elts.text2.textContent = texts[(textIndex + 1) % texts.length];
+        }
+
+        function doCooldown() {
+            morph = 0;
+
+            elts.text2.style.filter = "";
+            elts.text2.style.opacity = "100%";
+
+            elts.text1.style.filter = "";
+            elts.text1.style.opacity = "0%";
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+
+            let newTime = new Date();
+            let shouldIncrementIndex = cooldown > 0;
+            let dt = (newTime - time) / 1000;
+            time = newTime;
+
+            cooldown -= dt;
+
+            if (cooldown <= 0) {
+                if (shouldIncrementIndex) {
+                    textIndex++;
+                }
+
+                doMorph();
+            } else {
+                doCooldown();
+            }
+        }
+
+        animate();
+
+    </script>
+
+    <!-- page 1 -->
+    <div id="page1">
+        <a class="cont">鯊王子們得到惡魔果實，即刻返回王宮，將果實給老國王餵下。<br>
+            低沉的聲音在老國王腦海中響起，「我是能帶回亡者的惡魔，你想復活誰？」<br>
+            即使自身已是病入膏肓，老國王一聽，還是要求惡魔復活失蹤的王后。<br>
+            當時由於早產的鯊三得了腦性麻痺，王后往狂鯊之巔求得神藥，<br>
+            神藥天使果實治癒了鯊三，卻再也無人見過王后的身影。<br>
+            老國王為了幼子，只能忍下悲慟，獨自教養孩子長大。<br>
+            但老國王的請求卻遭到了惡魔的拒絕。
+        </a>
+        <a href="#page2" class="next round">&#8250;</a>
+    </div>
+
+    <!-- page 2 -->
+    <div id="page2">
+        <a class="cont">「她還未加入亡者的行列。」惡魔說。<br>
+            老國王震驚於王后尚在人世的消息，但惡魔不再多說什麼，只催促老國王做出決定。<br>
+            老國王見此，於是要求惡魔復活巫醫，好救治自己。<br>
+            惡魔滿足了他的要求，使用穢土轉生之術帶回了巫醫。<br>
+            巫醫精湛的醫術治癒了老國王，但老國王終日思念不知何故失蹤在外的王后，抑鬱寡歡。
+        </a>
+        <a href="#page3" class="next round">&#8250;</a>
+    </div>
+
+    <!-- page 3 -->
+    <div id="page3">
+        <a class="cont">在醫治好老國王後，巫醫回到了他位在鯊魚國境外的巢穴。<br>
+            自他逝世後，此地變成了巫女獨居的場所。<br>
+            「回去吧，」巫醫勸說道，「滄海桑田，他仍然沒有一刻不想念著妳。」
+            原來巫女就是失蹤的王后。<br>
+            當時帶著神藥要回宮的路上遭到了襲擊，雖然有路過的巫醫救下她的性命，臉上卻留下了縱橫的傷痕。<br>
+            容貌盡毀的她無法忍受以這副模樣出現在丈夫面前，於是她拜巫醫為師，自此過著與世隔絕的生活。
+        </a>
+        <a href="#page4" class="next round">&#8250;</a>
+    </div>
+
+    <!-- page 4 -->
+    <div id="page4">
+        <a class="cont">因為老國王差一點回天乏術，王后終於鼓起勇氣，在巫醫的陪同下回到王宮。<br>
+            王后一一道來解釋這幾年來發生的事，老國王十分心疼王后，最後含淚緊緊的與王后擁抱。
+        </a>
+        <a href="#page2" class="next round">&#8250;</a>
+    </div>
+
 </body>
 
 </html>

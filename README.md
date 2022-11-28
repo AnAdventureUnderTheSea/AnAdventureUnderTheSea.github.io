@@ -18,5 +18,4 @@ Spacial effects:
 * Loading Style CSS Text Animation https://codepen.io/alvarotrigo/pen/qBXeJab
 * Basic Text Animations https://codepen.io/alvarotrigo/pen/PoKMyWE
 * Sliding Text Animation Carousel https://codepen.io/alvarotrigo/pen/PoKMyWE
-
-
+* Flip text animation https://codepen.io/alvarotrigo/pen/bGrXmwM
