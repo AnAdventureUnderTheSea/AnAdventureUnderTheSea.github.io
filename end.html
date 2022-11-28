@@ -7,6 +7,7 @@
 
         body {
             font-family: ‘Noto Sans TC’, sans-serif;
+            font-weight: 800;
         }
 
         /* button next */
@@ -33,6 +34,7 @@
         #page0 {
             height: 768px;
             text-align: center;
+            background-color: #111;
             /*
             scroll-margin-block-start: 110px;
             scroll-margin-block-end: 110px;
@@ -43,7 +45,6 @@
             padding: 0;
             margin: 0;
             box-sizing: border-box;
-            background-color: #111;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -90,7 +91,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #121212;
+            background-color: #111;
         }
 
         .container {
@@ -117,14 +118,14 @@
             overflow: hidden;
             z-index: 3;
             animation: moveUp 3s ease-in-out infinite;
-            background-color: #121212;
+            background-color: #111;
 
         }
 
         .lower {
             bottom: 0;
             height: 100%;
-            background: linear-gradient(180deg, #121212 52.5%, #fff 52.5%);
+            background: linear-gradient(180deg, #111 52.5%, #fff 52.5%);
             color: transparent;
             background-clip: text;
             -webkit-background-clip: text;
@@ -189,6 +190,44 @@
                 font-size: 0.5rem;
             }
         }
+
+        #page2 {
+            height: 768px;
+            background-color: #111;
+            color: #fff;
+        }
+
+        h1 {
+            padding-top: 100px;
+            position: absolute;
+            left: 200px;
+            width: 300px;
+            font-size: 20px;
+        }
+
+        h2 {
+            padding-top: 100px;
+            position: absolute;
+            left: 500px;
+            width: 300px;
+            font-size: 20px;
+        }
+
+        h3 {
+            padding-top: 100px;
+            position: absolute;
+            left: 800px;
+            width: 300px;
+            font-size: 20px;
+        }
+
+        h4 {
+            padding-top: 100px;
+            position: absolute;
+            left: 1100px;
+            width: 300px;
+            font-size: 20px;
+        }
     </style>
 </head>
 
@@ -217,7 +256,14 @@
         </div>
         <a href="#page2" class="next round">&#8250;</a>
     </div>
-    <script></script>
+
+    <!-- page 2 -->
+    <div id="page2">
+        <h1>結局一：上帝果實</h1>
+        <h2>結局二：惡魔果實</h2>
+        <h3>結局三：天使果實</h3>
+        <h4>番外篇：往事如煙</h4>
+    </div>
 
 </body>
 
