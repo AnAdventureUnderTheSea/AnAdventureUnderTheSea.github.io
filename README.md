@@ -19,3 +19,4 @@ Spacial effects:
 * Basic Text Animations https://codepen.io/alvarotrigo/pen/PoKMyWE
 * Sliding Text Animation Carousel https://codepen.io/alvarotrigo/pen/PoKMyWE
 * Flip text animation https://codepen.io/alvarotrigo/pen/bGrXmwM
+* Text Split and Reveal Animation https://codepen.io/RitikaAgrawal08/pen/ExmrRzj
