@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        @import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
+
+        body {
+            font-family: ‘Noto Sans TC’, sans-serif;
+            font-weight: 800;
+            background-image: url('https://1721181113.rsc.cdn77.org/data/thumbs/full/33052/650/0/0/0/ocean-floor.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        /* contents */
+        .cont {
+            margin-top: 10%;
+            background: rgba(0, 0, 0, 0.3);
+            border: 2px solid #008CBA;
+            /* Blue */
+            border-radius: 12px;
+            color: white;
+            padding: 10px 24px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 20px;
+            transition-duration: 0.2s;
+        }
+
+        #page0 {
+            height: 768px;
+            text-align: center;
+        }
+
+        #container {
+            position: absolute;
+            margin: auto;
+            width: 50vw;
+            height: 80pt;
+            top: 0;
+            bottom: 0;
+
+            filter: url(#threshold) blur(0.6px);
+        }
+
+        #text1,
+        #text2 {
+            position: absolute;
+            width: 100%;
+            display: inline-block;
+
+            font-size: 80pt;
+
+            text-align: center;
+
+            user-select: none;
+        }
+
+        /* button next */
+        a {
+            text-decoration: none;
+            display: inline-block;
+            padding: 8px 16px;
+        }
+
+        a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .next {
+            background-color: #04AA6D;
+            color: white;
+        }
+
+        .round {
+            border-radius: 50%;
+        }
+
+        #page1 {
+            height: 768px;
+            text-align: center;
+            /*
+            scroll-margin-block-start: 110px;
+            scroll-margin-block-end: 110px;
+            */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- page 0 -->
+    <div id="page0">
+        <div id="container">
+            <span id="text1"></span>
+            <span id="text2"></span>
+        </div>
+        <svg id="filters">
+            <defs>
+                <filter id="threshold">
+                    <feColorMatrix in="SourceGraphic" type="matrix" values="1 0 0 0 0
+                                            0 1 0 0 0
+                                            0 0 1 0 0
+                                            0 0 0 255 -140" />
+                </filter>
+            </defs>
+        </svg>
+        <a href="#page1" class="next round">&#8250;</a>
+    </div>
+    <script>
+        const elts = {
+            text1: document.getElementById("text1"),
+            text2: document.getElementById("text2")
+        };
+
+        const texts = [
+            "番外篇",
+            "A Spin-off Story",
+        ];
+
+        const morphTime = 1;
+        const cooldownTime = 0.25;
+
+        let textIndex = texts.length - 1;
+        let time = new Date();
+        let morph = 0;
+        let cooldown = cooldownTime;
+
+        elts.text1.textContent = texts[textIndex % texts.length];
+        elts.text2.textContent = texts[(textIndex + 1) % texts.length];
+
+        function doMorph() {
+            morph -= cooldown;
+            cooldown = 0;
+
+            let fraction = morph / morphTime;
+
+            if (fraction > 1) {
+                cooldown = cooldownTime;
+                fraction = 1;
+            }
+
+            setMorph(fraction);
+        }
+
+        function setMorph(fraction) {
+            elts.text2.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`;
+            elts.text2.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
+
+            fraction = 1 - fraction;
+            elts.text1.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`;
+            elts.text1.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
+
+            elts.text1.textContent = texts[textIndex % texts.length];
+            elts.text2.textContent = texts[(textIndex + 1) % texts.length];
+        }
+
+        function doCooldown() {
+            morph = 0;
+
+            elts.text2.style.filter = "";
+            elts.text2.style.opacity = "100%";
+
+            elts.text1.style.filter = "";
+            elts.text1.style.opacity = "0%";
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+
+            let newTime = new Date();
+            let shouldIncrementIndex = cooldown > 0;
+            let dt = (newTime - time) / 1000;
+            time = newTime;
+
+            cooldown -= dt;
+
+            if (cooldown <= 0) {
+                if (shouldIncrementIndex) {
+                    textIndex++;
+                }
+
+                doMorph();
+            } else {
+                doCooldown();
+            }
+        }
+
+        animate();
+
+    </script>
+
+    <!-- page 1 -->
+    <div id="page1">
+        <a class="cont">燈籠魚公主與鯊魚王子陷入了熱戀，<br>
+            燈籠魚不如鯊魚的戰鬥力高強，因此燈籠魚王國非常擔心他們唯一的公主，<br>
+            但公主堅決只要和鯊魚王子結婚，否則將立誓終身不嫁。<br>
+            燈籠魚王國不願讓公主難過，只能同意讓公主嫁給鯊魚王子。            
+        </a>
+        <a href="#page2" class="next round">&#8250;</a>
+    </div>
+
+    <!-- page 2 -->
+    <div id="page2">
+        <a class="cont">大婚後，公主陸陸續續剩下三位王子。
+            懷著三子時，因為虎鯨國陰謀派遣人馬，導致公主早產下腦性麻痺的鯊三。
+            雖然鯊魚王表示他有派人去找神藥來拯救兒子，但由於時間太久都沒消息，鯊王后在無意間聽到禁地有神藥的消息，便偷偷跑出去要尋找神藥。            
+        </a>
+        <a href="#page2" class="next round">&#8250;</a>
+    </div>
+
+</body>
+
+</html>
