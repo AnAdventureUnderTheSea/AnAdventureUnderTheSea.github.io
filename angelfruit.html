@@ -2,12 +2,223 @@
 <html>
 
 <head>
+    <style>
+        @import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
 
+        body {
+            font-family: ‘Noto Sans TC’, sans-serif;
+            font-weight: 800;
+            background-image: url('https://1721181113.rsc.cdn77.org/data/thumbs/full/33052/650/0/0/0/ocean-floor.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        /* contents */
+        .cont {
+            margin-top: 10%;
+            background: rgba(0, 0, 0, 0.3);
+            border: 2px solid #008CBA;
+            /* Blue */
+            border-radius: 12px;
+            color: white;
+            padding: 10px 24px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 20px;
+            transition-duration: 0.2s;
+        }
+
+        #page0 {
+            height: 768px;
+            text-align: center;
+        }
+
+        #container {
+            position: absolute;
+            margin: auto;
+            width: 50vw;
+            height: 80pt;
+            top: 0;
+            bottom: 0;
+
+            filter: url(#threshold) blur(0.6px);
+        }
+
+        #text1,
+        #text2 {
+            position: absolute;
+            width: 100%;
+            display: inline-block;
+
+            font-size: 80pt;
+
+            text-align: center;
+
+            user-select: none;
+        }
+
+        /* button next */
+        a {
+            text-decoration: none;
+            display: inline-block;
+            padding: 8px 16px;
+        }
+
+        a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .next {
+            background-color: #04AA6D;
+            color: white;
+        }
+
+        .round {
+            border-radius: 50%;
+        }
+
+        #page1 {
+            height: 768px;
+            text-align: center;
+            /*
+            scroll-margin-block-start: 110px;
+            scroll-margin-block-end: 110px;
+            */
+        }
+    </style>
 </head>
 
 <body>
-    <h1>天使果實</h1>
-    <p>I'm hosted with GitHub Pages.</p>
+    <!-- page 0 -->
+    <div id="page0">
+        <div id="container">
+            <span id="text1"></span>
+            <span id="text2"></span>
+        </div>
+        <svg id="filters">
+            <defs>
+                <filter id="threshold">
+                    <feColorMatrix in="SourceGraphic" type="matrix" values="1 0 0 0 0
+                                            0 1 0 0 0
+                                            0 0 1 0 0
+                                            0 0 0 255 -140" />
+                </filter>
+            </defs>
+        </svg>
+        <a href="#page1" class="next round">&#8250;</a>
+    </div>
+    <script>
+        const elts = {
+            text1: document.getElementById("text1"),
+            text2: document.getElementById("text2")
+        };
+
+        const texts = [
+            "結局三",
+            "天使果實",
+            "治癒一切病痛",
+        ];
+
+        const morphTime = 1;
+        const cooldownTime = 0.25;
+
+        let textIndex = texts.length - 1;
+        let time = new Date();
+        let morph = 0;
+        let cooldown = cooldownTime;
+
+        elts.text1.textContent = texts[textIndex % texts.length];
+        elts.text2.textContent = texts[(textIndex + 1) % texts.length];
+
+        function doMorph() {
+            morph -= cooldown;
+            cooldown = 0;
+
+            let fraction = morph / morphTime;
+
+            if (fraction > 1) {
+                cooldown = cooldownTime;
+                fraction = 1;
+            }
+
+            setMorph(fraction);
+        }
+
+        function setMorph(fraction) {
+            elts.text2.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`;
+            elts.text2.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
+
+            fraction = 1 - fraction;
+            elts.text1.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`;
+            elts.text1.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
+
+            elts.text1.textContent = texts[textIndex % texts.length];
+            elts.text2.textContent = texts[(textIndex + 1) % texts.length];
+        }
+
+        function doCooldown() {
+            morph = 0;
+
+            elts.text2.style.filter = "";
+            elts.text2.style.opacity = "100%";
+
+            elts.text1.style.filter = "";
+            elts.text1.style.opacity = "0%";
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+
+            let newTime = new Date();
+            let shouldIncrementIndex = cooldown > 0;
+            let dt = (newTime - time) / 1000;
+            time = newTime;
+
+            cooldown -= dt;
+
+            if (cooldown <= 0) {
+                if (shouldIncrementIndex) {
+                    textIndex++;
+                }
+
+                doMorph();
+            } else {
+                doCooldown();
+            }
+        }
+
+        animate();
+
+    </script>
+
+    <!-- page 1 -->
+    <div id="page1">
+        <a class="cont">鯊王子們得到上帝果實，即刻返回王宮，將果實給老國王餵下。<br>
+            果實帶著老國王回到了他心中最遺憾的那一刻——王后失蹤的一個月前。<br>
+            王后的哀號聲傳來，她正要臨盆。<br>
+            一群虎鯨闖入王宮，使王后摔倒，還未到產期便要生產了，<br>
+            當時國王忙於帶領侍衛與虎鯨戰鬥，直到一切都結束，才知曉王后難產，產下的鯊三不幸得了腦性麻痺。<br>
+            王后悲痛欲絕，獨身前往狂鯊之巔取神藥救鯊三，<br>
+            最終神藥天使果實治癒了鯊三，卻再也無人見過王后的身影。
+        </a>
+        <a href="#page2" class="next round">&#8250;</a>
+    </div>
+
+    <!-- page 2 -->
+    <div id="page2">
+        <a class="cont">回到了這一刻，鯊國王當機立斷，<br>
+            他派遣一批侍衛去處理虎鯨，又喊鯊大鯊二帶著一批侍從以最快的速度去找來巫醫，<br>
+            自己則是陪著王后生產，不教她分心擔憂外面的情形。<br>
+            盡速抵達王宮的巫醫及時幫王后接生，順利產下了鯊三，<br>
+            王后無須前往狂鯊之巔，便也沒有失蹤的後續，<br>
+            一家五口自此過著團圓和美的日子。
+        </a>
+        <a href="#page2" class="next round">&#8250;</a>
+    </div>
+
 </body>
 
 </html>

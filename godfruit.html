@@ -3,13 +3,37 @@
 
 <head>
     <style>
+        @import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
+
+        body {
+            font-family: ‘Noto Sans TC’, sans-serif;
+            font-weight: 800;
+            background-image: url('https://1721181113.rsc.cdn77.org/data/thumbs/full/33052/650/0/0/0/ocean-floor.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        /* contents */
+        .cont {
+            margin-top: 10%;
+            background: rgba(0, 0, 0, 0.3);
+            border: 2px solid #008CBA;
+            /* Blue */
+            border-radius: 12px;
+            color: white;
+            padding: 10px 24px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 20px;
+            transition-duration: 0.2s;
+        }
 
         #page0 {
             height: 768px;
             text-align: center;
         }
-
-        @import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
 
         #container {
             position: absolute;
@@ -28,7 +52,6 @@
             width: 100%;
             display: inline-block;
 
-            font-family: ‘Noto Sans TC’, sans-serif;
             font-size: 80pt;
 
             text-align: center;
@@ -36,19 +59,40 @@
             user-select: none;
         }
 
+        /* button next */
+        a {
+            text-decoration: none;
+            display: inline-block;
+            padding: 8px 16px;
+        }
+
+        a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .next {
+            background-color: #04AA6D;
+            color: white;
+        }
+
+        .round {
+            border-radius: 50%;
+        }
 
         #page1 {
             height: 768px;
             text-align: center;
             /*
-      scroll-margin-block-start: 110px;
-      scroll-margin-block-end: 110px;
-      */
+            scroll-margin-block-start: 110px;
+            scroll-margin-block-end: 110px;
+            */
         }
     </style>
 </head>
 
 <body>
+    <!-- page 0 -->
     <div id="page0">
         <div id="container">
             <span id="text1"></span>
@@ -64,6 +108,7 @@
                 </filter>
             </defs>
         </svg>
+        <a href="#page1" class="next round">&#8250;</a>
     </div>
     <script>
         const elts = {
@@ -149,7 +194,11 @@
 
     </script>
 
-
+    <!-- page 1 -->
+    <div id="page1">
+        <a class="cont">來！<br></a>
+        <a href="#page2" class="next round">&#8250;</a>
+    </div>
 
 </body>
 
